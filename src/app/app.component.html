@@ -21,11 +21,14 @@
     <router-outlet></router-outlet>
 </div>
 <mat-menu #userMenu="matMenu">
+  <button mat-menu-item routerLink="/profile">
+    Profile
+  </button>
+  <button mat-menu-item routerLink="/chat">
+    Chat
+  </button>
   <button mat-menu-item (click)="logout()">
     <mat-icon>logout</mat-icon>
     Logout
-  </button>
-  <button mat-menu-item routerLink="/profile">
-    Profile
   </button>
 </mat-menu>

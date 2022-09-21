@@ -23,6 +23,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
  import {MatMenuModule} from '@angular/material/menu'; 
 import { HotToastModule } from '@ngneat/hot-toast';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     SignUpComponent,
     LoginComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
