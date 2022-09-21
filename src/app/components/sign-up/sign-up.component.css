@@ -1,0 +1,19 @@
+.form-container {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    background: #eceff1;
+    padding: 3.2rem;
+    border-radius: 0.5rem;
+    justify-content: center;
+}
+.form-container mat-form-field {
+    width: 100%;
+}
+.form-container button {
+    display: block;
+    margin: 10px auto;
+}
+.signup-message {
+    display: block;
+}

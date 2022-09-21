@@ -1,0 +1,21 @@
+mat-toolbar {
+    justify-content: space-between;
+    background-color: #DD2D4A;
+    color: white;
+}
+.image-profile-icon {
+    border-radius: 100%;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+.content {
+    padding: 2rem;
+}
+.link-home {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.link-home:visited {
+    color: rgb(255, 255, 255);
+}
