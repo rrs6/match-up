@@ -1,0 +1,35 @@
+.profile-container {
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+.informations-container {
+    text-align: center;
+    max-width: 400px;
+}
+.img-user {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.profile-image {
+    position: relative;
+}
+.button-edit {
+    position: absolute;
+    right: 12px;
+    bottom: 0px;
+}
+mat-icon {
+    scale: 0.7;
+}
+.save-button-profile {
+    display: block;
+    margin: 10px auto;
+}
+mat-form-field {
+    padding: 10px;
+}
