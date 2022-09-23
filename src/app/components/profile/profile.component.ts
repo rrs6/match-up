@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { HotToastService } from '@ngneat/hot-toast';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { switchMap, tap } from 'rxjs';
 import { ProfileUser } from 'src/app/models/user-profile';
 import { UploadImgService } from 'src/app/services/upload-img.service';
+import {MatRadioModule} from '@angular/material/radio';
 import { UsersService } from 'src/app/services/users.service';
 
 @UntilDestroy()
@@ -23,6 +25,8 @@ export class ProfileComponent implements OnInit {
     lastname: [''],
     phone: [''],
     address: [''],
+    age: [],
+    gender: [''],
   });
 
   constructor(
@@ -38,6 +42,7 @@ export class ProfileComponent implements OnInit {
       .subscribe((user) => {
         this.profileForm.patchValue({ ...user });
       });
+    
   }
 
   uploadImage(event: any, { uid }: ProfileUser) {
@@ -76,5 +81,8 @@ export class ProfileComponent implements OnInit {
         })
       )
       .subscribe();
+  }
+  hello(event: Event):void {
+    console.log(event);
   }
 }

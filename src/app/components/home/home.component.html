@@ -1,1 +1,5 @@
-<h1 *ngIf="user$ | async as user">Welcome, to our app {{user.displayName}}!</h1>
+<div class="list-cards" *ngIf="userss | async as users">
+    <div *ngFor="let user of users">
+        <app-card [cardInfo]="user"></app-card>
+    </div> 
+</div>

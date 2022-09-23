@@ -24,6 +24,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ChatComponent } from './components/chat/chat.component';
     LoginComponent,
     HomeComponent,
     ProfileComponent,
-    ChatComponent
+    ChatComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

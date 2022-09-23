@@ -9,22 +9,42 @@
     <input type="file" #inputField hidden (change)="uploadImage($event, user)"/>
     <div class="form-container informations-container smat-elevation-z5">
         <h2>Informations</h2>
-        <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
-            <mat-form-field>
-                <input matInput placeholder="Display name" formControlName="displayName"/>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="First name" formControlName="firstname"/>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Last name" formControlName="lastname"/>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Phone Number" formControlName="phone"/>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Address" formControlName="address"/>
-            </mat-form-field>
+        <form  class="informations-form" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+            <div class="information-field">
+                <label class="label-information" for="displayName">Display name </label>
+                <input class="input-text-information" id="displayName" matInput placeholder="Display name" formControlName="displayName"/>
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="firstname">Firstname </label>
+                <input class="input-text-information" id="firstname" matInput placeholder="Firstname" formControlName="firstname"/>
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="lastname">Lastname </label>
+                <input class="input-text-information" id="lastname" matInput placeholder="Lastname" formControlName="lastname"/>
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="phone">Phone number </label>
+                <input class="input-text-information" id="phone" matInput placeholder="Phone number" formControlName="phone"/>
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="address">Address</label>
+                <input class="input-text-information" id="address" matInput placeholder="Address" formControlName="address"/>
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="age">Age</label>
+                <input min="18" max="100" type="number" class="input-text-information" id="age" matInput placeholder="age" formControlName="age"/>
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="gender">Gender</label>
+                <select class="gender-field" name="gender" id="gender" formControlName="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="check1">Futebol</label>
+                <input type="checkbox" class="input-text-information" value="Futebol" id="check1" (change)="hello($event)"/>
+            </div>
             <button class="save-button-profile" mat-raised-button color="primary" type="submit">Save</button>
         </form>
     </div>

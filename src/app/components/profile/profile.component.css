@@ -8,7 +8,10 @@
 }
 .informations-container {
     text-align: center;
-    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .img-user {
     border-radius: 100%;
@@ -27,9 +30,55 @@ mat-icon {
     scale: 0.7;
 }
 .save-button-profile {
-    display: block;
     margin: 10px auto;
 }
 mat-form-field {
     padding: 10px;
+}
+.information-field {
+    margin-bottom: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+}
+.label-information {
+    display: block;
+    color: rgb(173, 173, 173);
+    margin-left: 5px;
+    font-size: 1.05rem;
+}
+.input-text-information:focus {
+    outline: none;
+    border-bottom-color: rgb(126, 126, 255);
+}
+.input-text-information {
+    width: 400px;
+    max-width: 70%;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 1.3rem;
+    margin-left: 5px;
+    border: none;
+    background: #eeeeee;
+    border-bottom: 2px solid rgb(31, 31, 31)
+}
+.gender-field {
+    max-width: 100px;
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 1.3rem;
+    margin-left: 5px;
+    border: none;
+    background: #eeeeee;
+    border-bottom: 2px solid rgb(31, 31, 31);
+    width: 100px;
+}
+.informations-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1;
 }

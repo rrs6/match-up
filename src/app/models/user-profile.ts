@@ -7,4 +7,6 @@ export interface ProfileUser {
     phone?: string;
     address?: string;
     photoURL?: string;
+    age?: number;
+    gender?: string;
 }
