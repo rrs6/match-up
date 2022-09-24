@@ -9,4 +9,5 @@ export interface ProfileUser {
     photoURL?: string;
     age?: number;
     gender?: string;
+    futebol?: boolean;
 }

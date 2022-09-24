@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
     address: [''],
     age: [],
     gender: [''],
+    futebol: [false]
   });
 
   constructor(
@@ -84,5 +85,8 @@ export class ProfileComponent implements OnInit {
   }
   hello(event: Event):void {
     console.log(event);
+  }
+  public onFutebolChanged(value:boolean){
+    this.profileForm.value.futebol = value;
   }
 }

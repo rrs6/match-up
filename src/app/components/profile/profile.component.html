@@ -43,7 +43,12 @@
             </div>
             <div class="information-field">
                 <label class="label-information" for="check1">Futebol</label>
-                <input type="checkbox" class="input-text-information" value="Futebol" id="check1" (change)="hello($event)"/>
+                <input #futebolCheckbox
+                    id="futebolCheckbox"
+                    type="checkbox"
+                    [checked]="this.profileForm.value.futebol"
+                    (change)="onFutebolChanged(futebolCheckbox.checked)"
+                >
             </div>
             <button class="save-button-profile" mat-raised-button color="primary" type="submit">Save</button>
         </form>
