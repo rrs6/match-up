@@ -12,14 +12,10 @@ import { UserProfile } from '@angular/fire/auth';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  user$ = this.authService.currentUser$;
-  
-  //userss = this.userService.allUsers$;
+  user$ = this.userService.currentUserProfile$;
 
-  
-  // usuarioLogado = combineLatest([this.userService.allUsers$, this.user$]).pipe(map(([users, user]) => users.find(u => (u.uid == user?.uid))));
+  userss = combineLatest([this.userService.allUsers$, this.user$]).pipe(map(([users, user]) => users.filter(u => (u.uid !== user?.uid) && (u.futebol == user?.futebol))));
 
-  userss = combineLatest([this.userService.allUsers$, this.user$]).pipe(map(([users, user]) => users.filter(u => (u.uid !== user?.uid) && (u.futebol == (users.find(u => (u.uid == user?.uid)))?.futebol))));
   constructor(private authService: AuthenticationService, private userService: UsersService) { }
 
   ngOnInit(): void {
@@ -27,3 +23,4 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
