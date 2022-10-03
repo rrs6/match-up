@@ -13,20 +13,13 @@ import { user, UserProfile } from '@angular/fire/auth';
 })
 export class HomeComponent implements OnInit {
   user$ = this.userService.currentUserProfile$;
-  margin = 0;
-  userss = combineLatest([this.userService.allUsers$, this.user$]).pipe(map(([users, user]) => users.filter(u => (u.uid !== user?.uid) && (u.futebol == (users.find(u => (u.uid == user?.uid)))?.futebol))));
+
+  userss = combineLatest([this.userService.allUsers$, this.user$]).pipe(map(([users, user]) => users.filter(u => (u.uid !== user?.uid) && (u.futebol == user?.futebol))));
+
   constructor(private authService: AuthenticationService, private userService: UsersService) { }
   ngOnInit(): void {
     this.userService.userss.subscribe((allUsers) => console.log(allUsers))
   }
-  leftMargin() {
-    this.margin-=100;
-    console.log(this.margin);
-  }
-  rightMargin() {
-    if(this.margin<0)
-      this.margin+=100;
-    console.log(this.margin);
-  }
 
 }
+
