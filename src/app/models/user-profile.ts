@@ -9,5 +9,7 @@ export interface ProfileUser {
     photoURL?: string;
     age?: number;
     gender?: string;
+    listOfLikes?: string[]; 
     futebol?: boolean;
+    matchList?: string[];
 }

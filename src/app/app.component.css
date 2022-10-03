@@ -10,7 +10,7 @@ mat-toolbar {
     border: 1px solid #fff;
 }
 .content {
-    padding: 2rem;
+    overflow: hidden;
 }
 .link-home {
     text-decoration: none;
