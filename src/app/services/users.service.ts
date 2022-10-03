@@ -20,7 +20,12 @@ import { combineLatest, filter, from, map, Observable, of, switchMap } from 'rxj
 })
 export class UsersService{
   user$ = this.currentUserProfile$;
-  userss = combineLatest([this.allUsers$, this.user$]).pipe(map(([users, user]) => users.filter(u => (u.uid !== user?.uid) && (u.listOfLikes?.filter((uid)=>uid == user?.uid)))));
+  userss = combineLatest([this.allUsers$, this.user$]).pipe(map(([users, user]) => users.filter(u => 
+        (u.listOfLikes?.find((uid)=>uid == user?.uid)) &&
+        (user?.listOfLikes?.find((uid)=>uid == u.uid))
+        )));
+
+
   tags: string[] = ["Futebol, Tik-Tok, Viajar, Maquiagem, Treino, Esportes, Filmes&Series"];
   constructor(private firestore: Firestore, private authService: AuthenticationService) {}
   get currentUserProfile$(): Observable<ProfileUser | null> {

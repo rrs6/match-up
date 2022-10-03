@@ -1,4 +1,4 @@
-<div style="margin-left: {{margin}}px" class="list-cards" *ngIf="userss | async as users">
+<div class="list-cards" *ngIf="userss | async as users">
     <div *ngFor="let user of users">
         <app-card [cardInfo]="user"></app-card>
     </div> 
