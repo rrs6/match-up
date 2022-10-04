@@ -4,10 +4,10 @@ Feature: Matches entre usuarios.
 Scenario: Match entre usuarios
     Given  Eu sou o usuario do sistema, cadastrado com o email "joao123@gmail.com" e senha "123456"
     And    os meus filtros escolhidos foram: games, cinema e gardening
-    And    Gender = "Male"
+    And    Gender = "M"
     And    Existe um usuario do sistema, cadastrado com email "maria123@gmail.com" e senha "123456"
-    And    os meus filtros escolhidos foram: games, cinema e gardening
-    And    Gender = "Female"
+    And    os seus filtros escolhidos foram: games, cinema e gardening
+    And    Gender = "F"
     And    que curtiu o usuario "joao123@gmail.com".
     When   O usuario "joao123@gmail.com" curte o usuario "maria123@gmail.com"
     And    Eu clico no menu na opção Chat
