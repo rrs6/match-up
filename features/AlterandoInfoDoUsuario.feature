@@ -1,6 +1,6 @@
 Feature: Informações do Usuario.
     Como usuario, é necessário que eu consiga modificar algumas informações referente ao meu usuário como:
-    Username, Primeiro nome, Ultimo nome, Endereço, Telephone, Idade, Gênero e Tags.
+    Username, Primeiro nome, Ultimo nome, Endereço, Telefone, Idade, Gênero e Tags.
 
 Scenario: Modificando o campo 'Address'
     Given  Eu sou o usuario do sistema, cadastrado com o email "maria123@gmail.com" e senha "123456"
