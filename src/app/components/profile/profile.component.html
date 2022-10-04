@@ -41,7 +41,10 @@
                     <option value="Female">Female</option>
                   </select>
             </div>
+            <h2>Filtering options</h2>
+
             <div class="information-field">
+
                 <label class="label-information" for="check1">Futebol</label>
                 <input #futebolCheckbox
                     id="futebolCheckbox"
@@ -50,6 +53,44 @@
                     (change)="onFutebolChanged(futebolCheckbox.checked)"
                 >
             </div>
+            <div class="information-field">
+                <label class="label-information" for="check1">Games</label>
+                <input #gamesCheckbox
+                    id="gamesCheckbox"
+                    type="checkbox"
+                    [checked]="this.profileForm.value.games"
+                    (change)="onGamesChanged(gamesCheckbox.checked)"
+                >
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="check1">Cinema</label>
+                <input #cinemaCheckbox
+                    id="cinemaCheckbox"
+                    type="checkbox"
+                    [checked]="this.profileForm.value.cinema"
+                    (change)="onCinemaChanged(cinemaCheckbox.checked)"
+                >
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="check1">Gardening</label>
+                <input #gardeningCheckbox
+                    id="gardeningCheckbox"
+                    type="checkbox"
+                    [checked]="this.profileForm.value.gardening"
+                    (change)="onGardeningChanged(gardeningCheckbox.checked)"
+                >
+            </div>
+            <div class="information-field">
+                <label class="label-information" for="check1">Food</label>
+                <input #foodCheckbox
+                    id="foodCheckbox"
+                    type="checkbox"
+                    [checked]="this.profileForm.value.food"
+                    (change)="onFoodChanged(foodCheckbox.checked)"
+                >
+            </div>
+
+
             <button class="save-button-profile" mat-raised-button color="primary" type="submit">Save</button>
         </form>
     </div>

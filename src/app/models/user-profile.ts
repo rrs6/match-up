@@ -9,7 +9,12 @@ export interface ProfileUser {
     photoURL?: string;
     age?: number;
     gender?: string;
-    listOfLikes?: string[]; 
+    listOfLikes?: string[];
     futebol?: boolean;
+    games?: boolean;
+    cinema?: boolean;
+    gardening?:boolean;
+    food?:boolean;
+    
     matchList?: string[];
 }

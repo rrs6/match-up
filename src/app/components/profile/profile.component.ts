@@ -27,7 +27,11 @@ export class ProfileComponent implements OnInit {
     address: [''],
     age: [],
     gender: [''],
-    futebol: [false]
+    futebol: false,
+    games: false,
+    cinema: false,
+    gardening: false,
+    food: false,
   });
 
   constructor(
@@ -86,7 +90,20 @@ export class ProfileComponent implements OnInit {
   hello(event: Event):void {
     console.log(event);
   }
+
   public onFutebolChanged(value:boolean){
     this.profileForm.value.futebol = value;
+  }
+  public onGamesChanged(value:boolean){
+    this.profileForm.value.games = value;
+  }
+  public onCinemaChanged(value:boolean){
+    this.profileForm.value.cinema = value;
+  }
+  public onGardeningChanged(value:boolean){
+    this.profileForm.value.gardening = value;
+  }
+  public onFoodChanged(value:boolean){
+    this.profileForm.value.food = value;
   }
 }
