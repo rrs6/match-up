@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ChatType } from '../../types/chat.type';
+import { ChatType, UserInfo } from '../../types';
 
 @Component({
   selector: 'chat-picker',
@@ -11,7 +11,7 @@ export class ChatPickerComponent implements OnInit {
 	people?: ChatType[];
 
 	@Input()
-	onSelect: (value: string) => void = () => {};
+	onSelect: (value: ChatType) => void = () => {};
 
 	constructor() { }
 

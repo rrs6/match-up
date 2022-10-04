@@ -1,4 +1,4 @@
 <div class="page">
 	<chat-picker class="picker" [people]="chats" [onSelect]="handleSelect"></chat-picker>
-	<chat-messages class="chat" [contact]="chats[0]" [messages]="messages"></chat-messages>
+	<chat-messages class="chat" [contact]="selected?.user" [messages]="messages" [onSend]="handleSend"></chat-messages>
 </div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MessagesType } from '../../types/messages.type';
+import { UserInfo, MessageInfo } from '../../types';
 
 @Component({
   selector: 'chat-messages',
@@ -8,10 +8,25 @@ import { MessagesType } from '../../types/messages.type';
 })
 export class ChatMessagesComponent implements OnInit {
 
-	@Input() contact?: { name: string; image?: string };
-	@Input() messages?: Array<MessagesType>;
+	// @Input() contact?: { name: string; image?: string };
+	@Input() contact?: UserInfo;
+	@Input() messages?: Array<MessageInfo>;
+	@Input() onSend?: (message: string) => void;
 
-	constructor() { }
+	disable = false;
+
+	message: string | null = '';
+	onChange(event: any) {
+		this.message = event.target.value;
+	}
+	onSubmit(event: any) {
+		this.onSend && this.onSend(this.message ?? '');
+		this.message = null;
+	}
+
+	constructor() {
+		this.disable = this.contact === undefined;
+	}
 
 	ngOnInit(): void {
 	}

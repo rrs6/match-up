@@ -1,11 +1,8 @@
 <ul class="chat-picker">
 	<li class="chat-item" *ngFor="let person of people">
-		<!-- <div> -->
-		<div (click)="onSelect(person.name)">
-			<img class="image" src="{{person.image ?? 'assets/img/userAvatar.png'}}" />
-			<h1 class="name">{{person.name}}</h1>
+		<div (click)="onSelect(person)">
+			<img class="image" src="{{person.user.image ?? 'assets/img/userAvatar.png'}}" />
+			<h1 class="name">{{person.user.name}}</h1>
 		</div>
 	</li>
 </ul>
-
-<!-- [(ngModel)]="users.username" (click)="data(users.username)" -->

@@ -5,14 +5,15 @@
 	</div>
 	<div class="chat">
 		<div *ngFor="let message of messages" class="message">
-			<div class="bubble {{message.sender === contact?.name ? 'received' : 'sent' }}">
+			<div class="bubble {{message.sender === contact?.id ? 'received' : 'sent' }}">
 				<p class="text">{{message.content}}</p>
 				<p class="time">{{message.time.getHours() + ':' + message.time.getMinutes()}}</p>
 			</div>
 		</div>
 	</div>
 	<div class="footer">
-		<input type="text" class="input">
-		<button class="send">Send</button>
+		<input type="text" class="input" placeholder="type your message..." (change)="onChange($event)"
+			[value]="message">
+		<button class="send" (click)="onSubmit($event)">Send</button>
 	</div>
 </div>
