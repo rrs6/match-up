@@ -1,0 +1,4 @@
+.list-cards{
+    display: flex;
+    overflow:scroll;
+}
