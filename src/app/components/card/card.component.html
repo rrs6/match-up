@@ -1,4 +1,10 @@
 <div class="card-container">
-    <p class="name-card">{{cardInfo?.displayName}}</p>
     <img class="image-card" height="450" width="250" src="{{cardInfo?.photoURL ?? 'assets/img/userAvatar.png'}}"/>
+    <div class="info-user">
+        <h1 class="name-card">{{cardInfo?.displayName}}</h1>
+        <p>{{cardInfo?.address}}</p>
+        <p>{{cardInfo?.gender}}</p>
+        <p>{{cardInfo?.age}}</p>
+    </div>
+    <button (click)="like()" class="like-button">Like</button>
 </div>
