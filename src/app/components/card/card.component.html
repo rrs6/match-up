@@ -5,6 +5,10 @@
         <p>{{cardInfo?.address}}</p>
         <p>{{cardInfo?.gender}}</p>
         <p>{{cardInfo?.age}}</p>
+        <p *ngIf="cardInfo?.futebol">Football</p>
+        <p *ngIf="cardInfo?.games">Games</p>
+        <p *ngIf="cardInfo?.food">Food</p>
+        <p *ngIf="cardInfo?.gardening">Gardening</p>
     </div>
     <button (click)="like()" class="like-button">Like</button>
 </div>
