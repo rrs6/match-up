@@ -16,11 +16,12 @@ export class HomeComponent implements OnInit {
 
   userss = combineLatest([this.userService.allUsers$, this.user$]).pipe(map(([users, user]) => users.filter(u => (u.uid !== user?.uid) && 
       
-      (u.futebol == user?.futebol) &&
-      (u.games == user?.games) &&
-      (u.cinema== user?.cinema) &&
-      (u.gardening== user?.gardening) &&
-      (u.food== user?.food)
+      (+(u.futebol == user?.futebol) +
+      +(u.games == user?.games) +
+      +(u.cinema== user?.cinema) +
+      +(u.gardening== user?.gardening) +
+      +(u.food== user?.food)) > 3
+
       )));
 
   constructor(private authService: AuthenticationService, private userService: UsersService) { }
