@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { UserInfo, MessageInfo } from '../../types';
 
 @Component({
@@ -12,8 +12,9 @@ export class ChatMessagesComponent implements OnInit {
 	@Input() contact?: UserInfo;
 	@Input() messages?: Array<MessageInfo>;
 	@Input() onSend?: (message: string) => void;
+	@ViewChild('ChatScroll') private myScrollContainer?: ElementRef;
 
-	disable = false;
+	test = false;
 
 	message: string | null = '';
 	onChange(event: any) {
@@ -24,11 +25,30 @@ export class ChatMessagesComponent implements OnInit {
 		this.message = null;
 	}
 
-	constructor() {
-		this.disable = this.contact === undefined;
-	}
+	constructor() { }
 
-	ngOnInit(): void {
+    ngOnInit() { 
+        this.scrollToBottom();
+		console.log('init')
+    }
+
+    ngAfterViewChecked() {        
+        this.scrollToBottom();        
+    } 
+
+    scrollToBottom(): void {
+        try {
+            if (this.myScrollContainer) {
+				this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+			}
+        } catch(err) { }                 
+    }
+
+	ngOnChanges(changes: SimpleChanges): void {
+		this.test = !this.test;
+		console.log(changes);
+		console.log(this.test);
+		console.log(this.messages);
 	}
 
 }

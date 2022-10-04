@@ -39,13 +39,12 @@ export class ChatComponent implements OnInit {
 				this.selected.user.file,
 				(update) => {
 					this.messages.push(update);
-					// window.location.reload();
+					this.messages = [...this.messages];
 				},
 			);
 		};
 
 		this.handleSend = (message: string) => {
-			console.log(this.selected?.file);
 			this.chatService.sendMessage(
 				this.selected?.chat ?? '',
 				this.authService.getUid(),
@@ -55,46 +54,9 @@ export class ChatComponent implements OnInit {
 				this.messages.push(data);
 			});
 		}
-		// this.chatService.readMessages()
-		// this.chatService.createChat(
-		// 	{
-		// 		id: this.authService.getUser()?.uid ?? '',
-		// 		name: this.authService.getUser()?.displayName ?? '',
-		// 	},
-		// 	{
-		// 		id: 'id002',
-		// 		name: 'The Rock',
-		// 		image: 'https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg',
-		// 	}
-		// );
-		// this.chatService.getChats(this.authService.getUser()?.uid ?? '').then(data => {
-		// 	console.log(data);
-		// });
-		// this.chatService.sendMessage(
-		// 	'XNJfejBGOxt5tTrAylzB',
-		// 	'J2gdq2ZmTDbkdZbOpMRM9ifk3VD2',
-		// 	'kqXJ905KqArOM0wgiLus',
-		// 	'Primeira mensagem enviada!'
-		// );
-		// this.chatService.sendMessage(
-		// 	'XNJfejBGOxt5tTrAylzB',
-		// 	'id002',
-		// 	'kO5qPTny3VuLNsLQjC2C',
-		// 	'Aparentemente tá funcionando!'
-		// );
-		// this.chatService.readMessages(
-		// 	'k8XNvunP5a7W8PivUD7G',
-		// ).then(data => {
-		// 	if (data)
-		// 	console.log(data);
-		// });
 	}
 
 	ngOnInit(): void { }
-
-	ngOnChanges(changes: SimpleChanges): void {
-		console.log(changes);
-	}
 
 }
 
