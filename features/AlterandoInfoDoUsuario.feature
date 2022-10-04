@@ -6,7 +6,7 @@ Scenario: Modificando o campo 'Address'
     Given  Eu sou o usuario do sistema, cadastrado com o email "maria123@gmail.com" e senha "123456"
     And    Em minha informações eu consigo ver os seguintes campos e valores: DisplayName = "Maria",
     Firstname = "Maria", Lastname = "Silva", Address = "Rua Dom Pedro II, 28", Age = "23" e Gender = "Female"
-    e Tags = "Futebol, Games e Food".
+    e filtros "Futebol", "Games" e "Food".
     When   Modifico o campo Address para "Avenida Irajara, 28"
     And    Clico em Save.
     Then   Vejo que agora todas informações permanecem exceto Address que é "Avenida Irajara, 28".
