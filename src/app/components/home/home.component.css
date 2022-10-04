@@ -1,6 +1,6 @@
 .list-cards{
     display: flex;
-    overflow:scroll;
+    overflow: auto;
     padding-right: 30px;
 
 }
