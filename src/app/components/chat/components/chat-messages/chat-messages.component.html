@@ -1,0 +1,18 @@
+<div class="content">
+	<div class="header">
+		<img class="image" src="{{contact?.image ?? 'assets/img/userAvatar.png'}}" />
+		<h1 class="name">{{contact?.name}}</h1>
+	</div>
+	<div class="chat">
+		<div *ngFor="let message of messages" class="message">
+			<div class="bubble {{message.sender === contact?.name ? 'received' : 'sent' }}">
+				<p class="text">{{message.content}}</p>
+				<p class="time">{{message.time.getHours() + ':' + message.time.getMinutes()}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<input type="text" class="input">
+		<button class="send">Send</button>
+	</div>
+</div>

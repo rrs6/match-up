@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule}  from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule }  from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,15 +16,17 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import {getFirestore, provideFirestore} from '@angular/fire/firestore';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage} from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
- import {MatMenuModule} from '@angular/material/menu'; 
+import { MatMenuModule } from '@angular/material/menu'; 
 import { HotToastModule } from '@ngneat/hot-toast';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { CardComponent } from './components/card/card.component';
+import { ChatPickerComponent } from './components/chat/components/chat-picker/chat-picker.component';
+import { ChatMessagesComponent } from './components/chat/components/chat-messages/chat-messages.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +37,15 @@ import { CardComponent } from './components/card/card.component';
     HomeComponent,
     ProfileComponent,
     ChatComponent,
-    CardComponent
+    CardComponent,
+    ChatPickerComponent,
+	ChatMessagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
+	MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,

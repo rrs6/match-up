@@ -1,0 +1,17 @@
+.page {
+  width: 100%;
+  height: calc(100vh - 64px - 5em);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.picker {
+  width: 30%;
+  height: 100%;
+}
+
+.chat {
+  width: 70%;
+  height: 100%;
+}
